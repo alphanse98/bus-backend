@@ -33,6 +33,7 @@ public class SpringSecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers(HttpMethod.POST, "api/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "api/register").permitAll()
+                .requestMatchers(HttpMethod.GET, "api/getBookingList").permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
